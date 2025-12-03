@@ -25,7 +25,8 @@ jobs:
         run: npm run build
 
       - name: Deploy Build Folder to VPS
-        uses: appleboy/scp-action@v0.1.8
+      
+        uses: appleboy/scp-action@v0.1.7
         env:
           TERM: xterm   # <-- Ensure TERM is here inside the step
         with:
@@ -37,6 +38,7 @@ jobs:
           target: "/home/deploy/frontend"
           strip_components: 1
           overwrite: true
+          args: "env TERM=xterm"
 
       - name: Move Files to public_html
         uses: appleboy/ssh-action@v1.0.0
