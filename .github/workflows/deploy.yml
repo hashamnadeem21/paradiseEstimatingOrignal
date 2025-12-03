@@ -23,24 +23,39 @@ jobs:
       
       - name: Build Frontend
         run: npm run build
-      
+
+      # -----------------------------
+      # FIX: TERM variable for scp-action
+      # -----------------------------
       - name: Deploy Build Folder to VPS
         uses: appleboy/scp-action@v0.1.4
+        env:
+          TERM: xterm
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
+          port: 22
           source: "dist/*"
           target: "/home/deploy/frontend"
           strip_components: 1
-      
+          overwrite: true
+
+      # -----------------------------
+      # SSH commands to move files
+      # -----------------------------
       - name: Move Files to public_html
         uses: appleboy/ssh-action@v0.1.8
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
+          port: 22
           script: |
+            mkdir -p /home/deploy/frontend
+            mkdir -p /home/paradiseestimating.com/public_html
+
             rm -rf /home/paradiseestimating.com/public_html/*
             cp -r /home/deploy/frontend/* /home/paradiseestimating.com/public_html/
+
             echo "Deployment completed successfully!"
