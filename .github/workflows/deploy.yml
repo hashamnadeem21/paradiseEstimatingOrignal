@@ -1,55 +1,52 @@
 name: Deploy to VPS (CyberPanel)
 
 on:
-  push:
-    branches:
-      - master
+push:
+branches:
+- master
 
 jobs:
-  deploy-frontend:
-    runs-on: ubuntu-latest
-    env:
-      TERM: xterm
-    
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-      
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      
-      - name: Install Dependencies
-        run: npm install
-      
-      - name: Build Frontend
-        run: npm run build
+deploy-frontend:
+runs-on: ubuntu-latest
+env:
+TERM: xterm
 
-      - name: Deploy Build Folder to VPS
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          port: 22
-          source: "dist/*"
-          target: "/home/deploy/frontend"
-          strip_components: 1
-          overwrite: true
+```
+steps:
+  - name: Checkout Code
+    uses: actions/checkout@v3
+  
+  - name: Setup Node
+    uses: actions/setup-node@v3
+    with:
+      node-version: '18'
+  
+  - name: Install Dependencies
+    run: npm install
+  
+  - name: Build Frontend
+    run: npm run build
 
-      - name: Move Files to public_html
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          port: 22
-          script: |
-            mkdir -p /home/deploy/frontend
-            mkdir -p /home/paradiseestimating.com/public_html
+  - name: Deploy Build to VPS and Move to public_html
+    uses: appleboy/ssh-action@v1.0.0
+    with:
+      host: ${{ secrets.VPS_HOST }}
+      username: ${{ secrets.VPS_USER }}
+      key: ${{ secrets.VPS_SSH_KEY }}
+      port: 22
+      script: |
+        # Create target folders if not exists
+        mkdir -p /home/deploy/frontend
+        mkdir -p /home/paradiseestimating.com/public_html
 
-            rm -rf /home/paradiseestimating.com/public_html/*
-            cp -r /home/deploy/frontend/* /home/paradiseestimating.com/public_html/
+        # Remove old files
+        rm -rf /home/paradiseestimating.com/public_html/*
 
-            echo "Deployment completed successfully!"
+        # Copy build files from repo to frontend folder
+        cp -r /github/workspace/dist/* /home/deploy/frontend/
+
+        # Move files to public_html
+        cp -r /home/deploy/frontend/* /home/paradiseestimating.com/public_html/
+
+        echo "Deployment completed successfully!"
+```
