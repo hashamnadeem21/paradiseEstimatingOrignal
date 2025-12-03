@@ -8,9 +8,7 @@ on:
 jobs:
   deploy-frontend:
     runs-on: ubuntu-latest
-    env:
-      TERM: xterm
-    
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
@@ -28,6 +26,8 @@ jobs:
 
       - name: Deploy Build Folder to VPS
         uses: appleboy/scp-action@v0.1.7
+        env:
+          TERM: xterm   # <-- Ensure TERM is here inside the step
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
@@ -40,6 +40,8 @@ jobs:
 
       - name: Move Files to public_html
         uses: appleboy/ssh-action@v1.0.0
+        env:
+          TERM: xterm   # <-- Also set TERM here
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
