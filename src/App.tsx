@@ -38,6 +38,9 @@ const App = () => (
           <Route path="/locations/:state" element={<StatePage />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/blog" element={<Blog />} />
+
+
+          
           <Route path="/contact" element={<Contact />} />
           <Route path="/get-free-quote" element={<Contact />} />
           <Route path="/services/category-1" element={<Category1 />} />
