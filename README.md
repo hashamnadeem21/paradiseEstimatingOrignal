@@ -1,10 +1,10 @@
-# Paradise Construction Estimating
+# Paradise Estimating
 
-A modern, professional website for Paradise Construction Estimating - providing expert construction estimation services with 15+ years of experience.
+A modern, professional website for Paradise Estimating - providing expert construction estimation services with 15+ years of experience.
 
 ## 🏗️ About
 
-Paradise Construction Estimating is a leading construction estimating service provider delivering accurate, reliable, and detailed cost estimates. We specialize in precision and accuracy, with every estimate carefully prepared using the latest tools and methods.
+Paradise Estimating is a leading construction estimating service provider delivering accurate, reliable, and detailed cost estimates. We specialize in precision and accuracy, with every estimate carefully prepared using the latest tools and methods.
 
 ### Key Features
 - 25+ years of industry experience
