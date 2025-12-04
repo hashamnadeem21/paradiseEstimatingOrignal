@@ -27,7 +27,7 @@ const Index = () => {
     "name": "Paradise Construction Estimating",
     "description": "Professional construction estimating services with 15+ years of experience. Get accurate material take-offs, residential and commercial estimates.",
     "url": "https://paradiseestimating.com",
-    "telephone": "+1-917-300-1079",
+    "telephone": "+1-718-719-6171",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "US"

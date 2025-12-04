@@ -45,7 +45,7 @@ const TopBar = () => {
                 {/* Left - Call Now Button */}
                 <div className="flex items-center">
                     <motion.a
-                        href="tel:+19173001079"
+                        href="tel:+17187196171"
                         className="bg-gray-700 text-[#7ED957] px-5 py-2 rounded-full font-bold flex items-center gap-2 shadow-lg hover:bg-gray-900 transition-colors text-sm lg:text-base"
                         animate={{
                             x: [-2, 2, -2, 2, 0],
@@ -59,7 +59,7 @@ const TopBar = () => {
                         }}
                     >
                         <Phone className="w-4 h-4 fill-current" />
-                        <span>Call Now: (917) 300-1079</span>
+                        <span>Call Now: (718) 719-6171</span>
                     </motion.a>
                 </div>
 

@@ -116,7 +116,7 @@ const Footer = () => {
             <a href="/privacy" className="hover:text-white transition-colors">Cookie & Privacy</a>
           </div>
           <div>
-            <p>Copyright © 2025 | Paradise</p>
+            <p>Copyright © 2025 | Paradise Estimating</p>
           </div>
         </div>
       </div>

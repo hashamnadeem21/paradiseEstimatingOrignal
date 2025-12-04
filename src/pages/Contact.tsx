@@ -14,7 +14,7 @@ const Contact = () => {
     "mainEntity": {
       "@type": "Organization",
       "name": "Paradise Construction Estimating",
-      "telephone": "+1-917-300-1079",
+      "telephone": "+1-718-719-6171",
       "email": "info@paradiseestimating.com"
     }
   };
@@ -23,7 +23,7 @@ const Contact = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Contact Us | Get a Free Construction Estimate Quote"
-        description="Contact Paradise Construction Estimating for a free consultation and quote. Call +1 (917) 300-1079 or fill out our online form."
+        description="Contact Paradise Construction Estimating for a free consultation and quote. Call +1 (718) 719-6171 or fill out our online form."
         canonical="https://paradiseestimating.com/contact"
         structuredData={structuredData}
       />
@@ -84,7 +84,7 @@ const Contact = () => {
                       <div className="w-12 h-12 bg-[#82E658] flex items-center justify-center flex-shrink-0">
                         <Phone className="w-6 h-6 text-black fill-black" />
                       </div>
-                      <span className="text-xl font-bold text-black">(737) 273-3314</span>
+                      <span className="text-xl font-bold text-black">(718) 719-6171</span>
                     </div>
 
                   </div>
