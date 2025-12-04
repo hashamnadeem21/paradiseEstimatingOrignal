@@ -1,4 +1,4 @@
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -46,6 +46,7 @@ const colorizeHeading = (heading: string) => {
 
 const StatePage = () => {
     const { state } = useParams();
+    const navigate = useNavigate();
     const [openIndex, setOpenIndex] = useState<number | null>(0);
     const [portfolioOpenIndex, setPortfolioOpenIndex] = useState<number | null>(0);
 
@@ -142,7 +143,7 @@ const StatePage = () => {
                                 <Button className="bg-gradient-to-r from-[#7ED957] to-[#6BC847] text-black hover:from-[#6BC847] hover:to-[#7ED957] font-black text-lg px-8 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all hover:scale-105 relative overflow-hidden group">
                                     <span className="relative z-10 flex items-center gap-2">
                                         <span className="text-2xl">🎉</span>
-                                        Avail 50% OFF Discount Now!
+                                        Avail 30% OFF Discount Now!
                                     </span>
                                     <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                                 </Button>
@@ -199,12 +200,12 @@ const StatePage = () => {
                             </h2>
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                                <Button className="bg-black text-white hover:bg-black/80 text-base font-bold py-6 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 w-full sm:w-auto">
+                                <Button onClick={() => navigate('/contact')} className="bg-black text-white hover:bg-black/80 text-base font-bold py-6 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 w-full sm:w-auto">
                                     Contact Us Now
                                 </Button>
-                                <Button variant="outline" className="bg-transparent border-4 border-black text-black hover:bg-black hover:text-white text-base font-bold py-6 px-8 rounded-xl transition-all hover:-translate-y-1 w-full sm:w-auto">
+                                {/* <Button variant="outline" className="bg-transparent border-4 border-black text-black hover:bg-black hover:text-white text-base font-bold py-6 px-8 rounded-xl transition-all hover:-translate-y-1 w-full sm:w-auto">
                                     Get a Free Quote
-                                </Button>
+                                </Button> */}
                             </div>
                         </motion.div>
                     </div>

@@ -29,7 +29,7 @@ const FeaturesSection = () => {
     <section className="py-2 lg:py-2">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-black mb-4">
+          <h2 className="text-3xl lg:text-4xl font-black mb-4 mt-10">
             STOP GUESSING, <span className="text-[#7ED957]">START</span> WINNING
           </h2>
         </div>

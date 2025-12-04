@@ -79,11 +79,31 @@ const Category1 = () => {
                         {/* Services List */}
                         <div className="max-w-6xl mx-auto border-t border-gray-300">
                             {[
-                                { number: "1", title: "Home Addition Estimation Services" },
-                                { number: "2", title: "Quantity Takeoff" },
-                                { number: "3", title: "Bridge Estimating" },
-                                { number: "4", title: "Freelance Estimating" },
-                                { number: "5", title: "Blueprint Estimating" },
+                                {
+                                    number: "1",
+                                    title: "Home Addition Estimation Services",
+                                    description: "We will provide all home addition services and structural changes. Such as the room, kitchen, and dining room. Our accurate home services will help you prevent unexpected costs and overruns."
+                                },
+                                {
+                                    number: "2",
+                                    title: "Quantity Takeoff",
+                                    description: "We provide trade-specific and full-scope takeoffs depending on your project needs. We provide structural steel takeoff, masonry takeoff, and concrete takeoff, and some others"
+                                },
+                                {
+                                    number: "3",
+                                    title: "Bridge Estimating",
+                                    description: "We specialize in providing bridge estimating services. We offer civil contractors,infrastructure developers, and engineers. Bridge estimating needs a high level of expertise, and we provide all."
+                                },
+                                {
+                                    number: "4",
+                                    title: "Freelance Estimating",
+                                    description: "Our freelance estimating services help contractors from the loss of hiring full-time staff. Paradise Estimating professional consultants help you to avoid overruns and extra costs."
+                                },
+                                {
+                                    number: "5",
+                                    title: "Blueprint Estimating",
+                                    description: "We deliver blueprint estimating services based on your design, drawings, and plans. First, architectural and structural plans are often prepared , and then we start work."
+                                },
                             ].map((service, index) => (
                                 <div key={index} className="group transition-colors duration-300 hover:bg-[#7ED957]">
                                     {/* Mobile Layout */}
@@ -99,7 +119,7 @@ const Category1 = () => {
                                             </h3>
                                         </div>
                                         <p className="text-sm text-black/80 leading-relaxed">
-                                            From quantity takeoffs to comprehensive project support, we deliver accurate and detailed estimating services for construction projects of all types and sizes.
+                                            {service.description}
                                         </p>
                                     </div>
 
@@ -130,7 +150,7 @@ const Category1 = () => {
                                         {/* Column 3: Service Description */}
                                         <div className="py-6 px-8 flex items-center">
                                             <p className="text-base text-black/80 leading-relaxed font-medium">
-                                                From quantity takeoffs to comprehensive project support, we deliver accurate and detailed estimating services for construction projects of all types and sizes.
+                                                {service.description}
                                             </p>
                                         </div>
                                     </div>
@@ -149,7 +169,7 @@ const Category1 = () => {
                         {/* Section Header */}
                         <div className="text-center mb-12">
                             <h2 className="text-3xl lg:text-5xl font-black uppercase text-black mb-3">
-                                Industries/Sectors We Are Serving
+                                Industries/ Sectors We are Serving
                             </h2>
                             <p className="text-xl lg:text-2xl font-bold text-[#82E658]">
                                 specialized estimating services for diverse industry sectors.
@@ -159,12 +179,10 @@ const Category1 = () => {
                         {/* Industries Grid */}
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
                             {[
-                                "Strategy and Planning",
-                                "Strategy and Planning",
-                                "Strategy and Planning",
-                                "Strategy and Planning",
-                                "Strategy and Planning",
-                                "Strategy and Planning"
+                                "Commercial Estimating Services",
+                                "Residential Estimating Services",
+                                "Industrial Estimating Services",
+
                             ].map((industry, index) => (
                                 <div
                                     key={index}
@@ -195,33 +213,9 @@ const Category1 = () => {
                                     </h3>
 
                                     {/* Description */}
-                                    <p className="text-sm text-gray-600 group-hover:text-white mb-6 transition-colors duration-300">
-                                        We bring the right people together to challenge established thinking and drive transform in 2020
-                                    </p>
 
-                                    {/* Read More Button */}
-                                    <button
-                                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                                        className="flex items-center gap-2 text-black group-hover:text-white font-semibold transition-colors duration-300"
-                                    >
-                                        Read More
-                                        <svg
-                                            width="16"
-                                            height="16"
-                                            viewBox="0 0 16 16"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="transition-transform group-hover:translate-x-1"
-                                        >
-                                            <path
-                                                d="M6 3L11 8L6 13"
-                                                stroke="currentColor"
-                                                strokeWidth="2"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </button>
+
+
                                 </div>
                             ))}
                         </div>

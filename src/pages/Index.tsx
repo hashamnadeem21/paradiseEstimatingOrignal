@@ -62,7 +62,7 @@ const Index = () => {
         <StatsSection />
         <ServiceButtons />
         <TrustSection />
-        <ContactSection />
+        {/* <ContactSection /> */}
         <FeaturesSection />
         <AboutSection />
         <ServicesListSection />
@@ -73,7 +73,7 @@ const Index = () => {
         <HelpContractorsSection />
         <ProcessEstimationSection />
         <SampleProjectsSection />
-        <ClientsSection />
+        {/* <ClientsSection /> */}
         <FAQSection />
       </main>
       <Footer />

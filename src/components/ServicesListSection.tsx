@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const ServicesListSection = () => {
   const services = [
@@ -81,13 +82,14 @@ const ServicesListSection = () => {
 
               <div className="mt-6">
                 <Button
+                  asChild
                   size="lg"
                   className="bg-gray-700 text-white font-bold uppercase tracking-wide rounded-full 
                              px-8 py-6 text-base
                              shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:bg-gray-700
                              hover:translate-y-1 hover:shadow-none hover:scale-105 transition-all duration-300"
                 >
-                  Our Construction Estimating Services
+                  <Link to="/contact">Contact Us</Link>
                 </Button>
               </div>
             </div>

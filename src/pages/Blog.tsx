@@ -87,7 +87,7 @@ const Blog = () => {
               </h1>
 
               <h2 className="text-xl lg:text-2xl font-bold tracking-wider text-black mb-6">
-                PARADISE ESTIMATING SERVICE COMPANY
+                PARADISE ESTIMATING COMPANY
               </h2>
             </div>
           </div>

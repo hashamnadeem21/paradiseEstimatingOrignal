@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Facebook, Youtube, Instagram, Linkedin } from "lucide-react";
 import { serviceAreasData } from "@/data/serviceAreas";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const structuredData = {
@@ -57,6 +58,23 @@ const Contact = () => {
                 </p>
                 <p>
                 </p>
+                <motion.a
+                  href="tel:+17187196171"
+                  className="bg-gray-700 text-[#7ED957] w-[300px] px-5 py-2 rounded-full font-bold flex items-center gap-2 shadow-lg hover:bg-gray-900 transition-colors text-sm lg:text-base"
+                  animate={{
+                    x: [-2, 2, -2, 2, 0],
+                    scale: [1, 1.02, 1]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatDelay: 3,
+                    ease: "easeInOut"
+                  }}
+                >
+                  <Phone className="w-4 h-4 fill-current" />
+                  <span>Call Now: (718) 719-6171</span>
+                </motion.a>
               </div>
             </div>
           </div>
@@ -145,13 +163,14 @@ const Contact = () => {
               {/* Right Map */}
               <div className="h-full min-h-[500px] rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3463.766168926056!2d-95.39587868489163!3d29.76839698198565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640bd96d9c6c0c7%3A0x6c6c6c6c6c6c6c6c!2s2000%20Taylor%20St%2C%20Houston%2C%20TX%2077007%2C%20USA!5e0!3m2!1sen!2s!4v1625680000000!5m2!1sen!2s"
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=898+Bay+Ridge+Avenue,Brooklyn,NY+11220,USA&zoom=15"
                   width="100%"
                   height="100%"
                   style={{ border: 0, minHeight: "100%" }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
+                  title="Paradise Estimating Location"
                 ></iframe>
               </div>
             </div>
@@ -159,10 +178,9 @@ const Contact = () => {
         </section>
 
         {/* Get in Touch Form Section */}
-        <section className="py-8 lg:py-10 bg-white">
+        {/* <section className="py-8 lg:py-10 bg-white">
           <div className="container mx-auto px-4 lg:px-6">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-              {/* Left Content */}
               <div className="space-y-6">
                 <h2 className="text-2xl lg:text-4xl font-black text-black leading-tight">
                   Upload Your Plans to Get Started
@@ -176,7 +194,7 @@ const Contact = () => {
                 <div className="space-y-3 mt-4">
                   {[
                     "A detailed cost breakdown",
-                    "Turnaround time (24–48 hours)",
+                    "Turnaround time (9–24 hours)",
                     "A discounted quote — Get 30% OFF today"
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -187,7 +205,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Right Form */}
               <div className="bg-gray-700 p-6 lg:p-8 rounded-3xl shadow-lg">
                 <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6">
                   Get in touch.
@@ -246,7 +263,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Our Commitment Section */}
         <section className="py-8 lg:py-10 bg-[#1A1F2C] items-center justify-center w-full">

@@ -129,9 +129,12 @@ const AboutUs = () => {
                 </div>
 
                 <Button
+                  asChild
                   className="bg-[#82E658] hover:bg-[#72d648] text-black font-bold text-lg px-6 py-2 h-auto rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all "
                 >
-                  Get a Quote
+                  <a href="tel:+17187196171">
+                    Get a Quote
+                  </a>
                 </Button>
               </div>
             </div>
@@ -229,9 +232,12 @@ const AboutUs = () => {
                 </p>
 
                 <Button
+                  asChild
                   className="bg-[#82E658] hover:bg-[#72d648] text-black font-bold text-lg px-8 py-6 h-auto rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all border-2 border-black"
                 >
-                  Call US Today and Get 30% Off
+                  <a href="tel:+17187196171">
+                    Call US Today and Get 30% Off
+                  </a>
                 </Button>
               </div>
             </div>
@@ -264,9 +270,12 @@ const AboutUs = () => {
                 </div>
 
                 <Button
+                  asChild
                   className="bg-[#82E658] hover:bg-[#72d648] text-black font-bold text-base px-4 py-2 h-auto rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all "
                 >
-                  Get a Quote
+                  <a href="tel:+17187196171" className="flex items-center gap-2">
+                    Get a Quote
+                  </a>
                 </Button>
               </div>
 
@@ -341,9 +350,13 @@ const AboutUs = () => {
               </p>
 
               <Button
+                asChild
                 className="bg-[#82E658] hover:bg-[#72d648] text-black font-bold text-lg px-4 py-4 h-auto rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all"
               >
-                Call US Today and Get 30% Off
+                <a href="tel:+17187196171" className="flex items-center gap-2">
+                  Call US Today and Get 30% Off
+                </a>
+
               </Button>
             </div>
           </div>
@@ -374,9 +387,12 @@ const AboutUs = () => {
                 </div>
 
                 <Button
+                  asChild
                   className="bg-[#82E658] hover:bg-[#72d648] text-black font-bold text-base px-4 py-2 h-auto rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all "
                 >
-                  Get a Quote
+                  <a href="tel:+17187196171" className="flex items-center gap-2">
+                    Get a Quote
+                  </a>
                 </Button>
               </div>
 
@@ -519,11 +535,14 @@ const AboutUs = () => {
                   </div>
                 </div>
 
-                <Button
+                {/* <Button
+                  asChild
                   className="bg-[#82E658] hover:bg-[#72d648] text-black font-bold text-lg px-4 py-2 h-auto rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all"
                 >
-                  Get a Quote
-                </Button>
+                  <a href="tel:+17187196171">
+                    Get a Quote
+                  </a>
+                </Button> */}
               </div>
 
               {/* Right Image */}

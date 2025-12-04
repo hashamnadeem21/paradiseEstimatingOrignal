@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import AboutUsSVG from "../../src/assets/about-us.svg"; // <-- Import your SVG
 
 const AboutSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-8 lg:py-8 ">
       <div className="container mx-auto px-4 lg:px-6">
@@ -14,7 +16,7 @@ const AboutSection = () => {
             </h2>
             <div className="space-y-2 text-gray-800">
               <p className="text-base leading-normal">
-                We provide <strong className="font-bold text-black">construction cost estimating</strong> and <strong className="font-bold text-black">quantity takeoff services</strong> worldwide. Our preconstruction estimating helps you win more projects and save time. We have been providing construction estimating services for 20 years. For 20 years, we have been providing <strong className="font-bold text-black">construction estimating services</strong> across the U.S., Canada, and Australia. Our construction estimation portfolio shows our best construction services across all trades.
+                We provide <strong className="font-bold text-black">construction cost estimating</strong> and <strong className="font-bold text-black">quantity takeoff services</strong> worldwide. Our preconstruction estimating helps you win more projects and save time. For 20 years, we have been providing <strong className="font-bold text-black">construction estimating services</strong> across the U.S., Canada, and Australia. Our construction estimation portfolio shows our best construction services across all trades.
               </p>
 
               <p className="text-base leading-normal">
@@ -39,6 +41,7 @@ const AboutSection = () => {
             <div className="mt-5">
               <Button
                 size="lg"
+                onClick={() => navigate("/about-us")}
                 className="bg-[#7ED957] text-black font-bold uppercase tracking-wide rounded-full 
                            px-8 py-6 text-base
                            shadow-[5px_5px_0px_0px_rgba(0,0,0,1)]

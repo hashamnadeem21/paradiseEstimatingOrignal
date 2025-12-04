@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { serviceCategories, tradeCategories, generateSlug } from "@/data/services";
 import TopBar from "@/components/TopBar";
@@ -11,6 +11,7 @@ const Header = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [tradesOpen, setTradesOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const currentPath = location.pathname;
 
   const isActive = (path: string) => {
@@ -20,7 +21,7 @@ const Header = () => {
   };
 
   const navItems = [
-    // { label: "Portfolio", href: "/portfolio" },
+    // { label: "Services", href: "/services/category-1" },
     { label: "About Us", href: "/about-us" },
     // { label: "Blog", href: "/blog" },
     { label: "Contact Us", href: "/contact" },
@@ -54,7 +55,7 @@ const Header = () => {
               </div>
 
               {/* Services Dropdown */}
-              <div
+              {/* <div
                 className="relative flex items-center h-full"
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
@@ -69,7 +70,7 @@ const Header = () => {
                 </a>
 
                 {/* Dropdown Menu */}
-                {servicesOpen && (
+              {/* {servicesOpen && (
                   <div className="absolute top-full left-[00px] mt-0 w-[350px] bg-white border border-border rounded-lg shadow-lg p-6  gap-y-2">
                     {serviceCategories.map((service, index) => (
                       <a
@@ -84,7 +85,7 @@ const Header = () => {
                   </div>
                 )}
                 <span className="mx-3 text-muted-foreground/50">|</span>
-              </div>
+              </div> */}
 
 
 
@@ -105,7 +106,7 @@ const Header = () => {
 
             {/* CTA Button */}
             <div className="hidden lg:block">
-              <Button className="bg-[#7ED957] text-black font-bold uppercase tracking-wide rounded-full px-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:shadow-none transition-all ">
+              <Button onClick={() => navigate('/contact')} className="bg-[#7ED957] text-black font-bold uppercase tracking-wide rounded-full px-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:shadow-none transition-all ">
                 Get a Free Quote
               </Button>
             </div>
@@ -134,7 +135,7 @@ const Header = () => {
                 </a>
 
                 {/* Mobile Services Dropdown */}
-                <div>
+                {/* <div>
                   <button
                     onClick={() => setServicesOpen(!servicesOpen)}
                     className={`flex items-center gap-1 text-sm font-bold uppercase transition-colors ${servicesOpen ? 'text-[#82E658]' : 'text-foreground'
@@ -156,7 +157,7 @@ const Header = () => {
                       ))}
                     </div>
                   )}
-                </div>
+                </div> */}
 
                 {/* Mobile Trades Dropdown */}
                 <div>

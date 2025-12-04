@@ -30,7 +30,10 @@ const CTASection = () => {
               <Button
                 className="bg-[#82E658] hover:bg-[#72d648] text-black font-black text-lg lg:text-xl px-4 py-4 lg:py-3 h-auto rounded-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all border-2 border-black uppercase tracking-wide animate-bounce"
               >
-                START WINNING 70% OFF!
+
+                <a href="tel:+17187196171" className="flex items-center gap-2">
+                  START WINNING 30% OFF!
+                </a>
               </Button>
             </div>
 

@@ -8,14 +8,14 @@ const Footer = () => {
     // { label: "Results", href: "/results" },
     { label: "About Us", href: "/about-us" },
     { label: "Locations", href: "/service-areas" },
-    // { label: "Case Studies", href: "/case-studies" },
+    { label: "Contact Us", href: "/contact" },
   ];
 
-  const serviceLinks = [
-    { label: "Residential Estimating", href: "/services/residential-estimating" },
-    { label: "Commercial Estimating", href: "/services/commercial-estimating" }, // Kept as per design image even if duplicate
-    { label: "Industrial Estimating", href: "/services/industrial-estimating" },
-  ];
+  // const serviceLinks = [
+  //   { label: "Residential Estimating", href: "/services/residential-estimating" },
+  //   { label: "Commercial Estimating", href: "/services/commercial-estimating" }, // Kept as per design image even if duplicate
+  //   { label: "Industrial Estimating", href: "/services/industrial-estimating" },
+  // ];
 
   return (
     <footer className="bg-[#1A1F2C] text-white py-16">
@@ -72,7 +72,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Service */}
+          {/* Column 3: Service
           <div>
             <h3 className="text-xl font-bold mb-6">Service</h3>
             <ul className="space-y-3">
@@ -88,7 +88,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Column 4: Subscribe */}
           <div>
