@@ -54,7 +54,7 @@ const services = [
     icon: Wrench,
     title: "Roofing Estimation Service",
     description: "Our roofing estimation services provide the exact cost of roofing projects. First, we measure your roof and calculate the needed materials. With our services, you do not have to guess how much shingles, flashing, or labor will cost. We handle all the exact details, measurements, and pricing for you.",
-    image: "/assets/MEP.webp"
+    image: "/assets/roofing.webp"
   },
   {
     id: "metal",
