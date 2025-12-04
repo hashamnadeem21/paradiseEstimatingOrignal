@@ -12,12 +12,9 @@ const Footer = () => {
   ];
 
   const serviceLinks = [
-    { label: "Construction Estimating", href: "/services/construction-estimating" },
-    { label: "Construction Cost", href: "/services/construction-cost" },
     { label: "Residential Estimating", href: "/services/residential-estimating" },
-    { label: "Construction Estimating", href: "/services/construction-estimating-2" }, // Kept as per design image even if duplicate
-    { label: "Preliminary Estimates", href: "/services/preliminary-estimates" },
-    { label: "Estimating Consultant", href: "/services/estimating-consultant" },
+    { label: "Commercial Estimating", href: "/services/commercial-estimating" }, // Kept as per design image even if duplicate
+    { label: "Industrial Estimating", href: "/services/industrial-estimating" },
   ];
 
   return (

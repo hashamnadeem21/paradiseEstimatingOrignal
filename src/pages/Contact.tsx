@@ -47,7 +47,7 @@ const Contact = () => {
           <div className="container mx-auto px-4 lg:px-6 relative z-10">
             <div className="max-w-3xl">
               <h1 className="text-2xl lg:text-4xl font-black uppercase leading-tight mb-8 text-black">
-                Contact Us— Get To Construction Estimating Services
+                Contact Us
               </h1>
               <div className="space-y-6 text-xl lg:text-xl font-small text-black/80 leading-relaxed">
                 <p>

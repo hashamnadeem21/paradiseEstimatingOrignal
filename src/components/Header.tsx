@@ -70,7 +70,7 @@ const Header = () => {
 
                 {/* Dropdown Menu */}
                 {servicesOpen && (
-                  <div className="absolute top-full left-[-200px] mt-0 w-[1000px] bg-white border border-border rounded-lg shadow-lg p-6 grid grid-cols-3 gap-x-8 gap-y-2">
+                  <div className="absolute top-full left-[00px] mt-0 w-[350px] bg-white border border-border rounded-lg shadow-lg p-6  gap-y-2">
                     {serviceCategories.map((service, index) => (
                       <a
                         key={service}

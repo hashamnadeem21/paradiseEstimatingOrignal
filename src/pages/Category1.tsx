@@ -45,15 +45,13 @@ const Category1 = () => {
                     <div className="container mx-auto px-4 lg:px-6 relative z-10">
                         <div className="max-w-3xl">
                             <h1 className="text-4xl lg:text-6xl font-black uppercase leading-tight mb-6 text-black">
-                                PROFESSIONAL CONSTRUCTION ESTIMATING SERVICES
+                                Professional <span className="text-[#7ED957]">Construction </span>Estimating Services
                             </h1>
 
-                            <h2 className="text-xl lg:text-2xl font-bold tracking-wider text-black mb-6">
-                                PARADISE ESTIMATING SERVICE COMPANY
-                            </h2>
+
 
                             <p className="text-base lg:text-lg text-black/80 leading-relaxed max-w-2xl">
-                                From quantity takeoffs to comprehensive project support, we deliver accurate and detailed estimating services for construction projects of all types and sizes.
+                                At Paradise Estimating, we provide professional and reliable construction estimating services.  Our goal is to provide accurate, clear, and cost-effective estimating solutions. That will save your time, reduce mistakes, and increase your chances of winning bids.
                             </p>
                         </div>
                     </div>
@@ -68,25 +66,24 @@ const Category1 = () => {
                         {/* Section Header */}
                         <div className="text-center mb-12">
                             <h2 className="text-3xl lg:text-5xl font-black uppercase text-black mb-3">
-                                OUR SERVICES CATEGORIES
+                                Our Services Categories
                             </h2>
                             <p className="text-xl lg:text-2xl font-bold text-[#82E658] mb-6">
-                                accurate. reliable. efficient
+                                Accurate, Reliable, Efficient
                             </p>
                             <p className="text-base text-black/70 max-w-4xl mx-auto">
-                                From quantity takeoffs to comprehensive project support, we deliver accurate and detailed estimating services for construction projects of all types and sizes.
+                                For 20 years Paradise Estimating has been providing top class estimating services. As a result many busy,beginner and advanced builders took advantage. Here are some services that our professionals are providing.
                             </p>
                         </div>
 
                         {/* Services List */}
                         <div className="max-w-6xl mx-auto border-t border-gray-300">
                             {[
-                                { number: "1", title: "Quantity Take-Off Services" },
-                                { number: "2", title: "Cost Estimating Services" },
-                                { number: "3", title: "Specialized Estimating" },
-                                { number: "4", title: "Quantity Take-Off Services" },
-                                { number: "5", title: "Cost Estimating Services" },
-                                { number: "6", title: "Specialized Estimating" }
+                                { number: "1", title: "Home Addition Estimation Services" },
+                                { number: "2", title: "Quantity Takeoff" },
+                                { number: "3", title: "Bridge Estimating" },
+                                { number: "4", title: "Freelance Estimating" },
+                                { number: "5", title: "Blueprint Estimating" },
                             ].map((service, index) => (
                                 <div key={index} className="group transition-colors duration-300 hover:bg-[#7ED957]">
                                     {/* Mobile Layout */}

@@ -10,7 +10,7 @@ export interface ServiceContent {
     }[];
 }
 
-export const serviceCategories = ["Commercial Estimating", "Industrial Estimating", "Residential Estimating", "Construction Takeoff Services", "Construction Estimating Consultant", "Carpentry estimating Services", "Surface Grading Estimating", "Demolition Estimating Services", "Exterior Improvements Estimating", "Consultation and Bid Submission", "Outsource/Freelance Estimating", "Single Family Residential Estimating", "Multi Family Residential Estimating", "Integrated Automation Estimating", "Electronic Safety and Security Estimating", "Pollution Control Equipment Estimating"
+export const serviceCategories = ["Commercial Estimating", "Industrial Estimating", "Residential Estimating",
 ];
 
 export const tradeCategories = [

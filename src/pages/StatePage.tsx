@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -56,17 +56,7 @@ const StatePage = () => {
     // Fallback if data is missing
     if (!data) {
         return (
-            <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
-                <Header />
-                <div className="flex-grow flex items-center justify-center">
-                    <div className="text-center">
-                        <h1 className="text-4xl font-bold text-gray-900 mb-4">State Not Found</h1>
-                        <p className="text-gray-600 mb-8">Sorry, we couldn't find data for the requested state.</p>
-                        <Button onClick={() => window.history.back()}>Go Back</Button>
-                    </div>
-                </div>
-                <Footer />
-            </div>
+            <Navigate to="/NotFound" />
         );
     }
 
