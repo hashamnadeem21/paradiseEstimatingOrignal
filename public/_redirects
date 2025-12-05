@@ -1,0 +1,6 @@
+
+# Proxy API requests to the HTTP backend
+/api/*  http://167.88.38.179:5000/api/:splat  200
+
+# Handle React Router (SPA Fallback)
+/*  /index.html  200
