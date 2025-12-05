@@ -135,7 +135,7 @@ const StatePage = () => {
                                     {colorizeHeading(data.uniqueApproach.heading)}
                                 </h2>
                                 <div className="w-24 h-1.5 bg-[#7ED957] rounded-full"></div>
-                                <div className="space-y-6 text-lg text-gray-700 leading-relaxed text-justify">
+                                <div className="space-y-6 text-base text-gray-700 leading-relaxed text-justify">
                                     {data.uniqueApproach.description.map((desc, index) => (
                                         <p key={index}>{desc}</p>
                                     ))}
@@ -683,16 +683,16 @@ const StatePage = () => {
                 </section>
 
                 {/* Area Near Me Section */}
-                <section className="py-16 lg:py-24 bg-white">
+                <section className="py-16 lg:py-24 bg-gray-900 text-white">
                     <div className="container mx-auto px-4 lg:px-6">
                         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                             {/* Left Content */}
                             <div className="space-y-8">
-                                <h2 className="text-2xl lg:text-4xl font-black text-black leading-tight">
+                                <h2 className="text-2xl lg:text-4xl font-black text-white leading-tight">
                                     {colorizeHeading(data.areaNearMe.heading)}
                                 </h2>
                                 <div className="w-24 h-1.5 bg-[#7ED957] rounded-full"></div>
-                                <div className="space-y-6 text-base text-gray-700 leading-relaxed text-justify">
+                                <div className="space-y-6 text-base text-gray-300 leading-relaxed text-justify">
                                     {data.areaNearMe.description.map((desc, index) => (
                                         <p key={index}>{desc}</p>
                                     ))}
@@ -700,7 +700,7 @@ const StatePage = () => {
                             </div>
 
                             {/* Right Map */}
-                            <div className="h-[400px] rounded-3xl overflow-hidden shadow-xl border border-gray-100 relative">
+                            <div className="h-[400px] rounded-3xl overflow-hidden shadow-xl border border-gray-700 relative">
                                 <iframe
                                     width="100%"
                                     height="100%"

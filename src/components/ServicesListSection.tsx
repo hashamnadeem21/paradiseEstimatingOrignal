@@ -89,7 +89,7 @@ const ServicesListSection = () => {
                              shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:bg-gray-700
                              hover:translate-y-1 hover:shadow-none hover:scale-105 transition-all duration-300"
                 >
-                  <Link to="/contact">Contact Us</Link>
+                  <Link to="/services/category-1">Our Services</Link>
                 </Button>
               </div>
             </div>

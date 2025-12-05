@@ -1,21 +1,21 @@
-import { Facebook, Instagram, Linkedin, Twitter, ChevronRight } from "lucide-react";
+import { Mail, MapPin, Phone, ChevronRight } from "lucide-react";
 
 const Footer = () => {
   const quickLinks = [
     { label: "Home", href: "/" },
-    // { label: "Pricing", href: "/pricing" },
-    // { label: "Blog", href: "/blog" },
-    // { label: "Results", href: "/results" },
+
+    { label: "Sample Projects", href: "/sample" },
+    { label: "Portfolio", href: "/portfolio" },
     { label: "About Us", href: "/about-us" },
     { label: "Locations", href: "/service-areas" },
     { label: "Contact Us", href: "/contact" },
   ];
 
-  // const serviceLinks = [
-  //   { label: "Residential Estimating", href: "/services/residential-estimating" },
-  //   { label: "Commercial Estimating", href: "/services/commercial-estimating" }, // Kept as per design image even if duplicate
-  //   { label: "Industrial Estimating", href: "/services/industrial-estimating" },
-  // ];
+  const serviceLinks = [
+    { label: "Residential Estimating", href: "/services/residential-estimating" },
+    { label: "Commercial Estimating", href: "/services/commercial-estimating" }, // Kept as per design image even if duplicate
+    { label: "Industrial Estimating", href: "/services/industrial-estimating" },
+  ];
 
   return (
     <footer className="bg-[#1A1F2C] text-white py-16">
@@ -38,20 +38,7 @@ const Footer = () => {
             <p className="text-gray-400 text-sm leading-relaxed">
               Paradise  Estimating is one of the leading construction estimating service providers in the industry. We deliver accurate, reliable, and detailed cost estimates. At Paradise Estimating, the strengths of our work are precision and accuracy. Every estimate is carefully prepared using the latest tools and methods.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="bg-white text-black p-2 rounded-full hover:bg-primary hover:text-white transition-colors">
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a href="#" className="bg-white text-black p-2 rounded-full hover:bg-primary hover:text-white transition-colors">
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a href="#" className="bg-white text-black p-2 rounded-full hover:bg-primary hover:text-white transition-colors">
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a href="#" className="bg-white text-black p-2 rounded-full hover:bg-primary hover:text-white transition-colors">
-                <Linkedin className="w-4 h-4" />
-              </a>
-            </div>
+
           </div>
 
           {/* Column 2: Quick Links */}
@@ -72,7 +59,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Service
+          {/* Column 3: Service */}
           <div>
             <h3 className="text-xl font-bold mb-6">Service</h3>
             <ul className="space-y-3">
@@ -88,21 +75,29 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div> */}
+          </div>
 
-          {/* Column 4: Subscribe */}
+          {/* Column 4: Contact Us */}
           <div>
-            <h3 className="text-xl font-bold mb-6">Subscribe</h3>
-            <div className="flex">
-              <input
-                type="email"
-                placeholder="Enter a email address"
-                className="bg-white text-black px-4 py-3 w-full focus:outline-none rounded-l-md text-sm"
-              />
-              <button className="bg-primary text-white px-6 py-3 font-bold text-sm hover:bg-primary/90 transition-colors rounded-r-md uppercase">
-                Send
-              </button>
-            </div>
+            <h3 className="text-xl font-bold mb-6">Contact Us</h3>
+            <ul className="space-y-4 text-sm text-gray-400">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-[#7ED957] flex-shrink-0 mt-0.5" />
+                <span>898 Bay Ridge Avenue,<br />Brooklyn, NY 11220, USA.</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-[#7ED957] flex-shrink-0" />
+                <a href="tel:+17187196171" className="hover:text-white transition-colors">
+                  +1 (718) 719-6171
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-[#7ED957] flex-shrink-0" />
+                <a href="mailto:Paradisestimating@gmail.com" className="hover:text-white transition-colors">
+                  Paradisestimating@gmail.com
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 

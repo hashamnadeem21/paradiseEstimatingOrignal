@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import SEOHead from "@/components/SEOHead";
 import ServiceContentWithForm from "@/components/ServiceContentWithForm";
 import { getServiceTemplateData } from "@/data/serviceTemplateData";
+import { P } from "node_modules/framer-motion/dist/types.d-BJcRxCew";
 import { useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 
@@ -446,6 +447,30 @@ const ServiceFAQSection = ({ faqs }: { faqs: { question: string; answer: string 
     );
 };
 
+// Helper function to colorize 2nd or 3rd word in headings
+const colorizeHeading = (heading: string) => {
+    const words = heading.split(' ');
+    if (words.length < 2) return heading;
+
+    // Determine which word to colorize (prefer 2nd word)
+    const colorIndex = words.length >= 2 ? 1 : 0;
+
+    return (
+        <>
+            {words.map((word, index) => (
+                <span key={index}>
+                    {index === colorIndex ? (
+                        <span className="text-[#7ED957]">{word}</span>
+                    ) : (
+                        word
+                    )}
+                    {index < words.length - 1 && ' '}
+                </span>
+            ))}
+        </>
+    );
+};
+
 const ServiceTemplate = () => {
     const { slug } = useParams<{ slug: string }>();
 
@@ -484,12 +509,12 @@ const ServiceTemplate = () => {
                     <div className="container mx-auto px-4 lg:px-6 relative z-10">
                         <div className="max-w-3xl">
                             <h1 className="text-3xl lg:text-5xl font-black uppercase leading-tight mb-6 text-black">
-                                {service.content.heroTitle}
+                                {colorizeHeading(service.content.heroTitle)}
                             </h1>
 
-                            <h2 className="text-xl lg:text-2xl font-bold tracking-wider text-black mb-6">
+                            <p className="text-xl lg:text-2xl  tracking-wider text-black mb-6">
                                 {service.content.heroSubtitle}
-                            </h2>
+                            </p>
                         </div>
                     </div>
                 </section>
@@ -512,7 +537,7 @@ const ServiceTemplate = () => {
                     <div className="container mx-auto px-4 lg:px-6">
                         <div className="text-center mb-8">
                             <h2 className="text-3xl lg:text-5xl font-black text-[#1A2E1A] mb-4">
-                                {service.content.processHeading}
+                                {colorizeHeading(service.content.processHeading)}
                             </h2>
                             <p className="text-gray-700 leading-relaxed mb-6 w-[50%] mx-auto">
                                 {service.content.processDescription}
@@ -554,7 +579,7 @@ const ServiceTemplate = () => {
                     <div className="container mx-auto px-4 lg:px-6">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl lg:text-5xl font-black text-black mb-4">
-                                {service.content.whyChooseHeading}
+                                {colorizeHeading(service.content.whyChooseHeading)}
                             </h2>
                         </div>
 
@@ -591,7 +616,7 @@ const ServiceTemplate = () => {
                     <div className="container mx-auto px-4 lg:px-6">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl lg:text-5xl font-black text-black mb-4">
-                                {service.content.tradesHeading}
+                                {colorizeHeading(service.content.tradesHeading)}
                             </h2>
                         </div>
                         <div className=" max-w-5xl mx-auto">
@@ -633,7 +658,7 @@ const ServiceTemplate = () => {
                     <div className="container mx-auto px-4 lg:px-6">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl lg:text-5xl font-black text-black mb-6">
-                                {service.content.portfolio.heading}
+                                {colorizeHeading(service.content.portfolio.heading)}
                             </h2>
                             <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed mb-10">
                                 {service.content.portfolio.intro}
@@ -677,16 +702,16 @@ const ServiceTemplate = () => {
                 <div className="w-full" style={{ height: '0.5px', backgroundColor: '#d1d5db' }}></div>
 
                 {/* Residential Services Near Me Section */}
-                <section className="py-12 lg:py-16 bg-white">
+                <section className="py-12 lg:py-16 bg-gray-900 text-white">
                     <div className="container mx-auto px-4 lg:px-6">
-                        <h2 className="text-2xl lg:text-3xl font-black text-black mb-6 text-center">
-                            {service.content.nearbyAreasHeading}
+                        <h2 className="text-2xl lg:text-3xl font-black text-white mb-6 text-center">
+                            {colorizeHeading(service.content.nearbyAreasHeading)}
                         </h2>
                         <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
                             {service.content.nearbyAreas.map((area, idx) => (
                                 <span
                                     key={idx}
-                                    className="bg-gray-100 text-gray-700 text-sm px-4 py-2 rounded-full hover:bg-[#7ED957] hover:text-white transition-colors cursor-pointer"
+                                    className="bg-gray-800 text-gray-300 text-sm px-4 py-2 rounded-full hover:bg-[#7ED957] hover:text-black transition-colors cursor-pointer border border-gray-700"
                                 >
                                     {area}
                                 </span>

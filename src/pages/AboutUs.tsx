@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import { useNavigate } from "react-router-dom";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Award, Target, Users, Zap, DollarSign, Headphones, FastForward, Wrench, ShieldCheck } from "lucide-react";
@@ -6,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import AccordionSection from "@/components/AccordionSection";
 
 const AboutUs = () => {
+  const navigate = useNavigate();
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
@@ -72,7 +74,7 @@ const AboutUs = () => {
             <div className="max-w-3xl">
               <h1 className="text-3xl lg:text-5xl font-black uppercase leading-tight mb-8 text-black">
                 ABOUT <span className="text-[#7ED957]">PARADISE</span><br />
-                ESTIMATION COMPANY
+                ESTIMATING COMPANY
               </h1>
               <div className="space-y-6 text-lg font-small text-black/80 leading-relaxed">
                 <p>
@@ -129,12 +131,10 @@ const AboutUs = () => {
                 </div>
 
                 <Button
-                  asChild
                   className="bg-[#82E658] hover:bg-[#72d648] text-black font-bold text-lg px-6 py-2 h-auto rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all "
+                  onClick={() => navigate('/contact')}
                 >
-                  <a href="tel:+17187196171">
-                    Get a Quote
-                  </a>
+                  Get a Quote
                 </Button>
               </div>
             </div>
@@ -270,12 +270,10 @@ const AboutUs = () => {
                 </div>
 
                 <Button
-                  asChild
                   className="bg-[#82E658] hover:bg-[#72d648] text-black font-bold text-base px-4 py-2 h-auto rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all "
+                  onClick={() => navigate('/contact')}
                 >
-                  <a href="tel:+17187196171" className="flex items-center gap-2">
-                    Get a Quote
-                  </a>
+                  Get a Quote
                 </Button>
               </div>
 
@@ -387,12 +385,10 @@ const AboutUs = () => {
                 </div>
 
                 <Button
-                  asChild
                   className="bg-[#82E658] hover:bg-[#72d648] text-black font-bold text-base px-4 py-2 h-auto rounded-full shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all "
+                  onClick={() => navigate('/contact')}
                 >
-                  <a href="tel:+17187196171" className="flex items-center gap-2">
-                    Get a Quote
-                  </a>
+                  Get a Quote
                 </Button>
               </div>
 

@@ -19,6 +19,8 @@ import Category4 from "./pages/Category4";
 import NotFound from "./pages/NotFound";
 
 import ServiceTemplate from "./pages/ServiceTemplate";
+import Sample from "./pages/Sample";
+import Pricing from "./pages/Pricing";
 
 const queryClient = new QueryClient();
 
@@ -38,7 +40,8 @@ const App = () => (
           <Route path="/locations/:state" element={<StatePage />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/blog" element={<Blog />} />
-
+          <Route path="/sample" element={<Sample />} />
+          <Route path="/pricing" element={<Pricing />} />
 
 
           <Route path="/contact" element={<Contact />} />
