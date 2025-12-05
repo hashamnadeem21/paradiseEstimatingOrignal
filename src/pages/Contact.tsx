@@ -4,11 +4,68 @@ import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin, Facebook, Youtube, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Youtube, Instagram, Linkedin, FileText, X } from "lucide-react";
 import { serviceAreasData } from "@/data/serviceAreas";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { toast } from "sonner";
+import { submitContactForm } from "@/services/formService";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { className, ...other } = e.target; // exclude className from destructuring if it was there, but easier to just take value
+    // The issue is default Input/TextArea might not pass name if we don't set it.
+  };
+
+  // Fix handleChange to actually work
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    // We need to ensure we are passing name prop to Input components
+    // e.target.name might be undefined if not set on the element?
+    // But we will add name prop in the JSX.
+    const name = e.target.getAttribute('name');
+    const value = e.target.value;
+    if (name) {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    const result = await submitContactForm({
+      ...formData,
+      file: selectedFile
+    });
+
+    if (result.success) {
+      toast.success(result.message);
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      setSelectedFile(null);
+    } else {
+      toast.error(result.message);
+    }
+
+    setIsSubmitting(false);
+  };
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
@@ -178,7 +235,7 @@ const Contact = () => {
         </section>
 
         {/* Get in Touch Form Section */}
-        {/* <section className="py-8 lg:py-10 bg-white">
+        <section className="py-8 lg:py-10 bg-white">
           <div className="container mx-auto px-4 lg:px-6">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
               <div className="space-y-6">
@@ -209,10 +266,13 @@ const Contact = () => {
                 <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6">
                   Get in touch.
                 </h3>
-                <form className="space-y-5">
+                <form className="space-y-5" onSubmit={handleSubmit}>
                   <div className="space-y-2">
                     <label className="text-white text-sm font-medium pl-1">Your Name</label>
                     <Input
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
                       className="bg-white border-0 h-10 rounded-full px-4 text-black placeholder:text-gray-400"
                       required
                     />
@@ -222,6 +282,9 @@ const Contact = () => {
                     <label className="text-white text-sm font-medium pl-1">Email Address</label>
                     <Input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       className="bg-white border-0 h-10 rounded-full px-4 text-black placeholder:text-gray-400"
                       required
                     />
@@ -231,6 +294,9 @@ const Contact = () => {
                     <label className="text-white text-sm font-medium pl-1">Phone Number</label>
                     <Input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
                       className="bg-white border-0 h-10 rounded-full px-4 text-black placeholder:text-gray-400"
                       required
                     />
@@ -239,31 +305,72 @@ const Contact = () => {
                   <div className="space-y-2">
                     <label className="text-white text-sm font-medium pl-1">Message</label>
                     <Textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       placeholder="Message"
                       className="bg-white border-0 min-h-24 rounded-2xl px-4 py-3 text-black placeholder:text-gray-400 resize-none"
                       required
                     />
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                    <Button
-                      type="button"
-                      className="flex-1 bg-[#4A4A4A] hover:bg-black text-white font-medium h-10 rounded-full transition-colors"
-                    >
-                      Upload Blueprint
-                    </Button>
-                    <Button
-                      type="submit"
-                      className="flex-1 bg-[#4A4A4A] hover:bg-black text-white font-medium h-10 rounded-full transition-colors"
-                    >
-                      Submit
-                    </Button>
+                  <div className="flex flex-col gap-3 pt-2">
+                    {selectedFile && (
+                      <div className="flex items-center gap-3 bg-white p-3 rounded-xl border border-gray-200">
+                        <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <FileText className="w-4 h-4 text-red-500" />
+                        </div>
+                        <span className="text-sm text-gray-600 truncate flex-1 font-medium">{selectedFile.name}</span>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setSelectedFile(null);
+                            // Reset file input if needed, though hidden input usually clears safely on re-select or we can use ref
+                            const input = document.getElementById('file-upload-contact-page') as HTMLInputElement;
+                            if (input) input.value = '';
+                          }}
+                          className="p-1 hover:bg-gray-100 rounded-full transition-colors"
+                        >
+                          <X className="w-4 h-4 text-gray-400 hover:text-gray-600" />
+                        </button>
+                      </div>
+                    )}
+
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <input
+                        type="file"
+                        id="file-upload-contact-page"
+                        className="hidden"
+                        accept="application/pdf"
+                        onChange={(e) => {
+                          const file = e.target.files?.[0];
+                          if (file) {
+                            setSelectedFile(file);
+                            console.log("File selected:", file.name);
+                          }
+                        }}
+                      />
+                      <Button
+                        type="button"
+                        onClick={() => document.getElementById('file-upload-contact-page')?.click()}
+                        className="flex-1 bg-[#4A4A4A] hover:bg-black text-white font-medium h-10 rounded-full transition-colors"
+                      >
+                        {selectedFile ? "File Selected" : "Upload Plan"}
+                      </Button>
+                      <Button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="flex-1 bg-[#4A4A4A] hover:bg-black text-white font-medium h-10 rounded-full transition-colors disabled:opacity-50"
+                      >
+                        {isSubmitting ? "Sending..." : "Submit"}
+                      </Button>
+                    </div>
                   </div>
                 </form>
               </div>
             </div>
           </div>
-        </section> */}
+        </section>
 
         {/* Our Commitment Section */}
         <section className="py-8 lg:py-10 bg-[#1A1F2C] items-center justify-center w-full">

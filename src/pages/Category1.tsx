@@ -5,8 +5,11 @@ import { Button } from "@/components/ui/button";
 import ProcessSection from "@/components/ProcessSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
 import FreeEstimateSection from "@/components/FreeEstimateSection";
+import { useNavigate } from "react-router-dom";
+import { Calculator, Monitor, Users, Phone } from "lucide-react";
 
 const Category1 = () => {
+    const navigate = useNavigate();
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "Service",
@@ -17,6 +20,60 @@ const Category1 = () => {
             "name": "Paradise Construction Estimating"
         }
     };
+
+    const steps = [
+        {
+            number: "1",
+            title: "Submit Your Drawing Plans",
+            description:
+                "First, send your drawings or blueprints (PDF, DWG, or CAD) on our contact number. Add all details about the project, such as scope, trade, and deadlines.",
+        },
+        {
+            number: "2",
+            title: "Review The Plan",
+            description:
+                "We will review your plans after preparing material quantities, labor costs, and pricing. Then ,we will check your estimate according to the local market rates.",
+        },
+        {
+            number: "3",
+            title: "Get A Quote & Approval",
+            description:
+                "We will review your documents in detail. We will send you a custom quote based on project size, trade, and complexity. After your approval, we will assign an estimator specialized in your project type to you.",
+        },
+        {
+            number: "4",
+            title: "Receive an Estimate",
+            description:
+                "You will receive your complete estimate report in Excel and PDF formats. CSI divisions, cost summaries, and detailed line items also in the provided list.",
+        },
+    ];
+
+    const features = [
+        {
+            icon: Calculator,
+            title: "Save Money and Time",
+            description:
+                "Money and time are the two most valuable resources for any contractor. Outsourcing your estimating to Paradise Estimating helps you save both money and time. Instead of hiring full-time staff, you should only pay per project and save 30% cost.",
+        },
+        {
+            icon: Monitor,
+            title: "Fast Turnaround",
+            description:
+                "We understand bid deadline issues and construction bid estimating services. That is why we deliver quick estimates within 9–24 hours and maintain your scope. We are suitable partners if you are handling a single project or leading many projects.",
+        },
+        {
+            icon: Users,
+            title: "Professional Estimators",
+            description:
+                "With large experience, our expert estimators understand every trade and its management. From concrete and drywall to electrical, MEP, and civil works, we have expertise. You will get a real report that gives real cost accuracy and smarter bidding strategies",
+        },
+        {
+            icon: Users,
+            title: "Best Software Tools",
+            description:
+                "Our takeoff and estimate reports give you the facts that are important for your estimation.  You can negotiate properly with clear, data-backed insights, suppliers and subcontractors. You can secure stronger margins with clear quantities, labor breakdowns, and cost insights.",
+        },
+    ];
 
     return (
         <div className="min-h-screen">
@@ -53,6 +110,22 @@ const Category1 = () => {
                             <p className="text-base lg:text-lg text-black/80 leading-relaxed max-w-2xl">
                                 At Paradise Estimating, we provide professional and reliable construction estimating services.  Our goal is to provide accurate, clear, and cost-effective estimating solutions. That will save your time, reduce mistakes, and increase your chances of winning bids.
                             </p>
+
+                            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                                <button
+                                    onClick={() => navigate("/contact")}
+                                    className="px-8 py-3 bg-[#7ED957] hover:bg-[#6BC847] text-[#1A2E1A] font-bold rounded-full transition-all transform hover:scale-105 shadow-lg text-lg"
+                                >
+                                    Get a Quote
+                                </button>
+                                <a
+                                    href="tel:+17187196171"
+                                    className="px-8 py-3 bg-[#1A2E1A] hover:bg-black text-white font-bold rounded-full transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2 text-lg"
+                                >
+                                    <Phone className="w-5 h-5" />
+                                    <span>Call Us</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -225,14 +298,76 @@ const Category1 = () => {
                 {/* Divider */}
                 <div className="w-full" style={{ height: '0.5px', backgroundColor: '#d1d5db' }}></div>
 
-                <section className="py-16 lg:py-24 bg-white">
-                    <ProcessSection />
+                <section className="py-8 lg:py-12 bg-white">
+                    <div className="container mx-auto px-4 lg:px-6">
+                        <div className="text-center mb-8">
+                            <h2 className="text-3xl lg:text-5xl font-black text-[#1A2E1A] mb-4">
+                                Our Proven Process
+                            </h2>
+                            <p className="text-gray-500 text-lg max-w-3xl mx-auto">
+                                We receive and deliver plans according to a process. This is a very easy and simple step that everyone can understand.
+                            </p>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {steps.map((step, index) => (
+                                <div
+                                    key={index}
+                                    className="group bg-white rounded-xl p-8 shadow-[0_0_20px_rgba(0,0,0,0.05)] hover:shadow-[0_0_30px_rgba(0,0,0,0.1)] transition-all duration-300 border border-transparent hover:border-[#7ED957] flex flex-col items-center text-center"
+                                >
+                                    {/* Number Circle */}
+                                    <div className="w-16 h-16 rounded-full bg-[#2A3C2A] group-hover:bg-[#7ED957] transition-colors duration-300 flex items-center justify-center mb-6">
+                                        <span className="text-2xl font-bold text-white group-hover:text-black">
+                                            {step.number}
+                                        </span>
+                                    </div>
+
+                                    {/* Title */}
+                                    <h3 className="text-xl font-bold text-[#1A2E1A] mb-4">
+                                        {step.title}
+                                    </h3>
+
+                                    {/* Description */}
+                                    <p className="text-gray-500 leading-relaxed text-sm">
+                                        {step.description}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </section>
 
                 {/* Divider */}
                 <div className="w-full" style={{ height: '0.5px', backgroundColor: '#d1d5db' }}></div>
+                {/* Why Choose Section */}
+                <section className="py-8 lg:py-12 bg-white">
+                    <div className="container mx-auto px-4 lg:px-6">
+                        <div className="text-center mb-8">
+                            <h2 className="text-3xl lg:text-5xl font-black text-black mb-6">
+                                Why Choose Paradise Estimating
+                            </h2>
+                            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                                At Paradise Estimating, your satisfaction comes first. Our friendly support team is available 24/7 to answer your questions and solve issues. We are here to guide you through every step of the construction cost estimating process.
+                            </p>
+                        </div>
 
-                <WhyChooseSection />
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                            {features.map((feature, index) => (
+                                <div key={index} className="flex flex-col items-center text-center">
+                                    <div className="w-20 h-20 rounded-full bg-[#7ED957] flex items-center justify-center mb-6 shadow-lg">
+                                        <feature.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-[#1A2E1A] mb-3">
+                                        {feature.title}
+                                    </h3>
+                                    <p className="text-gray-600 leading-relaxed text-sm">
+                                        {feature.description}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
 
                 {/* Divider */}
                 <div className="w-full" style={{ height: '0.5px', backgroundColor: '#d1d5db' }}></div>

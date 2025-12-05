@@ -22,8 +22,10 @@ const Header = () => {
 
   const navItems = [
     // { label: "Services", href: "/services/category-1" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "Samples", href: "/sample" },
     { label: "About Us", href: "/about-us" },
-    // { label: "Blog", href: "/blog" },
+    { label: "Pricing", href: "/pricing" }, // Added Pricing link
     { label: "Contact Us", href: "/contact" },
   ];
 
@@ -55,7 +57,7 @@ const Header = () => {
               </div>
 
               {/* Services Dropdown */}
-              {/* <div
+              <div
                 className="relative flex items-center h-full"
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
@@ -70,7 +72,7 @@ const Header = () => {
                 </a>
 
                 {/* Dropdown Menu */}
-              {/* {servicesOpen && (
+                {servicesOpen && (
                   <div className="absolute top-full left-[00px] mt-0 w-[350px] bg-white border border-border rounded-lg shadow-lg p-6  gap-y-2">
                     {serviceCategories.map((service, index) => (
                       <a
@@ -85,7 +87,7 @@ const Header = () => {
                   </div>
                 )}
                 <span className="mx-3 text-muted-foreground/50">|</span>
-              </div> */}
+              </div>
 
 
 
@@ -135,7 +137,7 @@ const Header = () => {
                 </a>
 
                 {/* Mobile Services Dropdown */}
-                {/* <div>
+                <div>
                   <button
                     onClick={() => setServicesOpen(!servicesOpen)}
                     className={`flex items-center gap-1 text-sm font-bold uppercase transition-colors ${servicesOpen ? 'text-[#82E658]' : 'text-foreground'
@@ -157,7 +159,7 @@ const Header = () => {
                       ))}
                     </div>
                   )}
-                </div> */}
+                </div>
 
                 {/* Mobile Trades Dropdown */}
                 <div>

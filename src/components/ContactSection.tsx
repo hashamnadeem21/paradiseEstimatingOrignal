@@ -1,11 +1,54 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, Globe, MapPin } from "lucide-react";
+import { Mail, Phone, Globe, MapPin, FileText, X } from "lucide-react";
+import { toast } from "sonner";
+import { submitContactForm } from "@/services/formService";
 
 const ContactSection = () => {
   const [activeTab, setActiveTab] = useState("quote");
   const [activeCategory, setActiveCategory] = useState<"services" | "trades">("services");
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    const result = await submitContactForm({
+      ...formData,
+      file: selectedFile
+    });
+
+    if (result.success) {
+      toast.success(result.message);
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      setSelectedFile(null);
+    } else {
+      toast.error(result.message);
+    }
+
+    setIsSubmitting(false);
+  };
 
   return (
     <section className="pt-16 pb-20 bg-white">
@@ -66,7 +109,7 @@ const ContactSection = () => {
             </button>
 
             <button
-              onClick={() => setActiveTab("consult")}
+              onClick={() => window.location.href = "tel:+17187196171"}
               className={`
       px-4 py-2 text-sm font-semibold rounded-t-xl shadow-lg shadow-black
       ${activeTab === "consult" ? "bg-[#484848] text-white" : "bg-[#C9C9C9] text-gray-700"}
@@ -81,19 +124,85 @@ const ContactSection = () => {
 
             <h3 className="text-3xl font-extrabold text-white mb-4">Get in touch.</h3>
 
-            <form className="space-y-8">
-              <Input className="bg-white rounded-full h-11 px-4" placeholder="Your Name" />
-              <Input className="bg-white rounded-full h-11 px-4" placeholder="Email Address" />
-              <Input className="bg-white rounded-full h-11 px-4" placeholder="Phone Number" />
-              <Textarea className="bg-white rounded-2xl min-h-[110px] px-4 py-3" placeholder="Message" />
+            <form className="space-y-8" onSubmit={handleSubmit}>
+              <Input
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                className="bg-white rounded-full h-11 px-4"
+                placeholder="Your Name"
+                required
+              />
+              <Input
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleInputChange}
+                className="bg-white rounded-full h-11 px-4"
+                placeholder="Email Address"
+                required
+              />
+              <Input
+                name="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={handleInputChange}
+                className="bg-white rounded-full h-11 px-4"
+                placeholder="Phone Number"
+                required
+              />
+              <Textarea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                className="bg-white rounded-2xl min-h-[110px] px-4 py-3"
+                placeholder="Message"
+                required
+              />
+
+              {selectedFile && (
+                <div className="flex items-center gap-3 bg-white p-3 rounded-xl border border-gray-200">
+                  <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FileText className="w-4 h-4 text-red-500" />
+                  </div>
+                  <span className="text-sm text-gray-600 truncate flex-1 font-medium">{selectedFile.name}</span>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedFile(null)}
+                    className="p-1 hover:bg-gray-100 rounded-full transition-colors"
+                  >
+                    <X className="w-4 h-4 text-gray-400 hover:text-gray-600" />
+                  </button>
+                </div>
+              )}
 
               <div className="flex justify-center gap-4 pt-3">
-                <button className="bg-[#4A4A4A] text-white px-5 py-2 rounded-full text-sm">
-                  Upload Blueprint
+                <input
+                  type="file"
+                  id="file-upload-contact-section"
+                  className="hidden"
+                  accept="application/pdf"
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) {
+                      setSelectedFile(file);
+                    }
+                  }}
+                />
+                <button
+                  type="button"
+                  onClick={() => document.getElementById('file-upload-contact-section')?.click()}
+                  className="bg-[#4A4A4A] text-white px-5 py-2 rounded-full text-sm"
+                >
+                  Upload Plan
                 </button>
 
-                <button className="bg-[#4A4A4A] text-white px-5 py-2 rounded-full text-sm">
-                  Submit
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-[#4A4A4A] text-white px-5 py-2 rounded-full text-sm disabled:opacity-50"
+                >
+                  {isSubmitting ? "Sending..." : "Submit"}
                 </button>
               </div>
             </form>

@@ -66,7 +66,7 @@ export const serviceTemplateData: Record<string, ServiceTemplateContent> = {
         description: "Professional residential estimating services for accurate project planning and budgeting.",
         content: {
             heroTitle: "Residential Estimating Services",
-            heroSubtitle: "PARADISE ESTIMATING SERVICE COMPANY",
+            heroSubtitle: "Paradise Estimating offers precise material takeoff services that help you win competitive bids. Our professional estimators are always here to provide fast estimation. The busy contractors can get our benefits",
             mainHeading: "Accurate Residential Estimating Services",
             tagline: "Accurate. Reliable. Efficient",
             description: ["Home construction or remodeling projects start with accurate cost planning. If you have a clear estimate, it will save money. Your cost overruns when your project estimate is right and clear. It will increase profit margins and build trust with clients. Our Residential Estimating Services provide material takeoffs and labor cost lists. You can bid on new home builds and on renovating interior properties."],
@@ -374,7 +374,7 @@ export const serviceTemplateData: Record<string, ServiceTemplateContent> = {
         description: "Professional commercial estimating services for accurate project planning and budgeting.",
         content: {
             heroTitle: "Commercial Estimating Services",
-            heroSubtitle: "PARADISE ESTIMATING SERVICE COMPANY",
+            heroSubtitle: "When every number matters, count on us. Our commercial estimators give clarity to plan confidently and purchase efficiently. With our commercial estimating services, you will be able to eliminate heavy issues. In your projects.",
             mainHeading: "Commercial Estimating Services",
             tagline: "Accurate. Reliable.Efficient",
             description: ["We have been providing commercial estimating services for more than 20 years. Our commercial estimating services start every project with control and balance", "If you stick to your budget, it helps you win more projects. Even small mistakes in numbers can lead to big problems later. If you make your budget clear, it will work as a tool to win the estimation. Even a few mistakes in numbers or labor figures can cause losses or project disputes. Hence, we provide the best commercial construction takeoff services. They help control these issues with precision. We work with contractors, subcontractors, companies, developers, and architects. Our estimates help you plan your work and create accurate bids or budgets. They can guide you from the start of the project all the way to purchasing materials."],
@@ -601,7 +601,7 @@ export const serviceTemplateData: Record<string, ServiceTemplateContent> = {
         description: "Professional industrial estimating services for accurate project planning and budgeting.",
         content: {
             heroTitle: "Industrial Estimating Services",
-            heroSubtitle: "PARADISE ESTIMATING SERVICE COMPANY",
+            heroSubtitle: "Our industrial Estimating services win more bids with better data. Our estimating services provide clear, reliable material estimates that strengthen your bid. Thus, we improve the accuracy of projects",
             mainHeading: "Industrial Estimating Services",
             tagline: "Accurate, Reliable, Efficient",
             heading: "What’s included in Industrial Estimating Services?",
@@ -854,7 +854,7 @@ export const serviceTemplateData: Record<string, ServiceTemplateContent> = {
         description: "Accuracy matters a  lot in estimating the industry, and we deliver it. From residential to commercial projects, Paradise Estimating provides dependable measurements. We will provide you with trusted bids with high win ratio. ",
         content: {
             heroTitle: "Construction Takeoff Services",
-            heroSubtitle: "PARADISE ESTIMATING SERVICE COMPANY",
+            heroSubtitle: "PARADISE ESTIMATING COMPANY",
             mainHeading: "Get  Accurate Construction Takeoff Services",
             tagline: "Accurate, Reliable, Efficient",
             heading: "What’s included in Construction Takeoff Services?",
@@ -1130,7 +1130,7 @@ export const serviceTemplateData: Record<string, ServiceTemplateContent> = {
         description: "Paradise Estimating is more trusted by contractors and developers nationwide. Our consultant provides the best estimates you need to stay competitive and win projects.",
         content: {
             heroTitle: "Construction Estimating Consultant",
-            heroSubtitle: "PARADISE ESTIMATING SERVICE COMPANY",
+            heroSubtitle: "PARADISE ESTIMATING COMPANY",
             mainHeading: "Best Construction Estimating Consultant",
             tagline: "Accurate.Reliable.Efficient",
             heading: "What’s included in our Construction Estimating Services?",
